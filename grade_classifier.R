@@ -1,12 +1,3 @@
-
-# Grade Classification
-
-## Problem
-Classify marks into grades based on score ranges.
-
-## Solution
-
-```r
 # Function to classify marks into grades
 classify_grade <- function(marks) {
     if (marks >= 90) {
@@ -26,11 +17,8 @@ classify_grade <- function(marks) {
 score <- 85
 grade <- classify_grade(score)
 cat("Marks:", score, "| Grade:", grade, "\n")
-```
 
-## Alternative: Vectorized Approach
-
-```r
+# Vectorized Approach
 classify_grades_vec <- function(marks) {
     cut(marks, 
             breaks = c(0, 60, 70, 80, 90, 100),
@@ -42,4 +30,3 @@ classify_grades_vec <- function(marks) {
 scores <- c(45, 65, 75, 85, 95)
 grades <- classify_grades_vec(scores)
 print(data.frame(Marks = scores, Grade = grades))
-```
